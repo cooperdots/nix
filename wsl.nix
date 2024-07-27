@@ -5,7 +5,11 @@
 }: {
 	environment.enableAllTerminfo = true;
 
-	# home-manager.users.coop = {};
+	home-manager.users.coop = {
+		imports = [
+			./home.nix
+		];
+	};
 
 	wsl = {
 		enable = true;

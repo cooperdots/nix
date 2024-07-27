@@ -4,13 +4,16 @@
 		nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
 		nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
+		home-manager.url = "github:nix-community/home-manager/release-24.05";
 	};
 
-	outputs = { self, nixpkgs, nixos-wsl, ... } @ inputs: {
+	outputs = { self, nixpkgs, nixos-wsl, home-manager, ... } @ inputs: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			specialArgs = { inherit inputs; };
 			modules = [
+				home-manager.nixosModules.home-manager
 				nixos-wsl.nixosModules.default
 				{
 					system.stateVersion = "24.05";
