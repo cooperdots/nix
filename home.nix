@@ -2,7 +2,8 @@
 	pkgs,
 	...
 }: let
-	unstable-packages = with pkgs.unstable; [
+	# unstable-packages = with pkgs.unstable; [
+	unstable-packages = with pkgs; [
 		neovim
 		tmux
 
