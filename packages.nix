@@ -12,6 +12,11 @@
 		tmux
 
 		ripgrep
+		fd
 		htop
+
+		# LSP servers and formatters
+		lua-language-server
+		stylua
 	];
 }
