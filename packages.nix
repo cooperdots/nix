@@ -11,6 +11,7 @@
 		neovim
 		tmux
 
+		ripgrep
 		htop
 	];
 }
