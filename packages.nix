@@ -14,6 +14,7 @@
 		ripgrep
 		fd
 		htop
+		gcc
 
 		# LSP servers and formatters
 		lua-language-server
