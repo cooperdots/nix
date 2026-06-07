@@ -21,6 +21,7 @@
 		isNormalUser = true;
 		shell = pkgs.nushell;
 	};
+	security.sudo.wheelNeedsPassword = true;
 
 	programs.git = {
 		enable = true;
