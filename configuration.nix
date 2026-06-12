@@ -14,6 +14,7 @@
 	wsl.enable = true;
 	wsl.defaultUser = "coop";
 	networking.hostName = "duoguffin";
+	time.timeZone = "America/Chicago";
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
