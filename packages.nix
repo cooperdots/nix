@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }: {
+{pkgs, ...}: {
 	environment.systemPackages = with pkgs; [
 		git
 		ghq
@@ -19,5 +19,8 @@
 		# LSP servers and formatters
 		lua-language-server
 		stylua
+
+		nixd
+		alejandra
 	];
 }
