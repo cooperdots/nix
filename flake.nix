@@ -7,6 +7,11 @@
 		import-tree.url = "github:vic/import-tree";
 
 		wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+
+		rust-overlay = {
+			url = "github:oxalica/rust-overlay";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = inputs:

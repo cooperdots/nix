@@ -1,13 +1,8 @@
-{
-	self,
-	inputs,
-	...
-}: {
-	flake.nixosModules.duoguffinConfiguration = {
-		pkgs,
-		lib,
-		...
-	}: {
+{inputs, ...}: {
+	flake.nixosModules.duoguffinConfiguration = {pkgs, ...}: {
+		imports = [
+		];
+
 		wsl.enable = true;
 		wsl.defaultUser = "coop";
 		networking.hostName = "duoguffin";
@@ -33,6 +28,7 @@
 			};
 		};
 
+		nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
 		environment.systemPackages = with pkgs; [
 			git
 			ghq
@@ -49,6 +45,11 @@
 			fd
 			htop
 			gcc
+
+			# Rust: change `beta` to `stable` if it fails
+			(rust-bin.beta.latest.default.override {
+					extensions = ["rust-analyzer"];
+				})
 
 			# LSP servers and formatters
 			lua-language-server
