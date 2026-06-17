@@ -48,7 +48,7 @@
 
 			# Rust: change `beta` to `stable` if it fails
 			(rust-bin.beta.latest.default.override {
-					extensions = ["rust-analyzer"];
+					extensions = ["rust-src" "rust-analyzer"];
 				})
 
 			# LSP servers and formatters
