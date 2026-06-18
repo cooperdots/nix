@@ -46,8 +46,8 @@
 			htop
 			gcc
 
-			# Rust: change `beta` to `stable` if it fails
-			(rust-bin.beta.latest.default.override {
+			# Rust: change `nightly` to `stable` if this fails
+			(rust-bin.nightly.latest.default.override {
 					extensions = ["rust-src" "rust-analyzer"];
 				})
 
