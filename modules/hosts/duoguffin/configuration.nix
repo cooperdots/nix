@@ -52,6 +52,9 @@
 					extensions = ["rust-src" "rust-analyzer"];
 				})
 
+			# Node
+			bun
+
 			# LSP servers and formatters
 			lua-language-server
 			stylua
