@@ -13,6 +13,7 @@
 			"flakes"
 		];
 		nix.nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+		nixpkgs.config.allowUnfree = true;
 
 		users.users.coop = {
 			isNormalUser = true;
@@ -28,7 +29,11 @@
 			};
 		};
 
-		nixpkgs.overlays = [inputs.rust-overlay.overlays.default];
+		nixpkgs.overlays = [
+			inputs.rust-overlay.overlays.default
+			inputs.claude-code.overlays.default
+		];
+
 		environment.systemPackages = with pkgs; [
 			git
 			ghq
@@ -61,6 +66,9 @@
 
 			nixd
 			alejandra
+
+			# AI
+			pkgs.claude-code
 		];
 
 		system.stateVersion = "26.05";
