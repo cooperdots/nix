@@ -68,7 +68,7 @@
 			alejandra
 
 			# AI
-			pkgs.claude-code
+			claude-code
 		];
 
 		system.stateVersion = "26.05";
