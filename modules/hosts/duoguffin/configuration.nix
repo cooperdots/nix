@@ -46,6 +46,7 @@
 			neovim
 			tmux
 			inputs.herdr.packages.x86_64-linux.herdr
+			tree-sitter
 
 			ripgrep
 			fd
